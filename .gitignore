@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.zip
+outputs/rep_p*.png
+outputs/run*.log
+outputs/run*.err
+outputs/fit_cache.json
+outputs/confusion_matrix.npy

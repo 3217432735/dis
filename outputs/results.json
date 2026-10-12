@@ -1,0 +1,334 @@
+{
+  "seed": 42,
+  "valid_size": 0.2,
+  "n_train": 5894,
+  "n_valid": 1474,
+  "n_test": 2457,
+  "n_classes": 10,
+  "class_counts": {
+    "0": 730,
+    "1": 739,
+    "2": 737,
+    "3": 742,
+    "4": 747,
+    "5": 745,
+    "6": 743,
+    "7": 738,
+    "8": 742,
+    "9": 705
+  },
+  "vectorizer_results": [
+    {
+      "vectorizer": "V0 基线 max_features=5000",
+      "n_features": 5000,
+      "accuracy": 0.903,
+      "macro_f1": 0.904,
+      "config": {
+        "max_features": 5000
+      }
+    },
+    {
+      "vectorizer": "V1 去停用词+去重音",
+      "n_features": 5000,
+      "accuracy": 0.9091,
+      "macro_f1": 0.91,
+      "config": {
+        "max_features": 5000,
+        "stop_words": "english",
+        "strip_accents": "unicode",
+        "min_df": 2
+      }
+    },
+    {
+      "vectorizer": "V2 V1+sublinear_tf",
+      "n_features": 5000,
+      "accuracy": 0.9132,
+      "macro_f1": 0.9141,
+      "config": {
+        "max_features": 5000,
+        "stop_words": "english",
+        "strip_accents": "unicode",
+        "min_df": 2,
+        "sublinear_tf": true
+      }
+    },
+    {
+      "vectorizer": "V3 V2+二元短语(1,2)",
+      "n_features": 20000,
+      "accuracy": 0.9308,
+      "macro_f1": 0.9313,
+      "config": {
+        "max_features": 20000,
+        "stop_words": "english",
+        "strip_accents": "unicode",
+        "min_df": 2,
+        "sublinear_tf": true,
+        "ngram_range": [
+          1,
+          2
+        ]
+      }
+    }
+  ],
+  "best_vectorizer": {
+    "vectorizer": "V3 V2+二元短语(1,2)",
+    "n_features": 20000,
+    "accuracy": 0.9308,
+    "macro_f1": 0.9313,
+    "config": {
+      "max_features": 20000,
+      "stop_words": "english",
+      "strip_accents": "unicode",
+      "min_df": 2,
+      "sublinear_tf": true,
+      "ngram_range": [
+        1,
+        2
+      ]
+    }
+  },
+  "model_results": [
+    {
+      "model": "多层感知机",
+      "params": "hidden=(100,), alpha=0.001",
+      "accuracy": 0.9389,
+      "macro_f1": 0.9392,
+      "train_time_s": 179.0
+    },
+    {
+      "model": "多层感知机",
+      "params": "hidden=(200,), alpha=0.001",
+      "accuracy": 0.9389,
+      "macro_f1": 0.939,
+      "train_time_s": 284.9
+    },
+    {
+      "model": "逻辑回归",
+      "params": "C=100",
+      "accuracy": 0.9376,
+      "macro_f1": 0.9377,
+      "train_time_s": 1.5
+    },
+    {
+      "model": "逻辑回归",
+      "params": "C=10",
+      "accuracy": 0.9369,
+      "macro_f1": 0.9371,
+      "train_time_s": 1.3
+    },
+    {
+      "model": "多层感知机",
+      "params": "hidden=(100,), alpha=0.0001",
+      "accuracy": 0.9362,
+      "macro_f1": 0.9367,
+      "train_time_s": 98.3
+    },
+    {
+      "model": "SVM(线性核)",
+      "params": "C=10",
+      "accuracy": 0.9355,
+      "macro_f1": 0.936,
+      "train_time_s": 18.3
+    },
+    {
+      "model": "SVM(线性核)",
+      "params": "C=100",
+      "accuracy": 0.9342,
+      "macro_f1": 0.9345,
+      "train_time_s": 18.3
+    },
+    {
+      "model": "多层感知机",
+      "params": "hidden=(100, 50), alpha=0.001",
+      "accuracy": 0.9335,
+      "macro_f1": 0.9341,
+      "train_time_s": 77.9
+    },
+    {
+      "model": "SVM(线性核)",
+      "params": "C=1",
+      "accuracy": 0.9308,
+      "macro_f1": 0.9313,
+      "train_time_s": 16.4
+    },
+    {
+      "model": "逻辑回归",
+      "params": "C=1",
+      "accuracy": 0.922,
+      "macro_f1": 0.9225,
+      "train_time_s": 0.6
+    },
+    {
+      "model": "朴素贝叶斯",
+      "params": "alpha=0.1",
+      "accuracy": 0.9064,
+      "macro_f1": 0.9075,
+      "train_time_s": 0.0
+    },
+    {
+      "model": "朴素贝叶斯",
+      "params": "alpha=0.01",
+      "accuracy": 0.9057,
+      "macro_f1": 0.9067,
+      "train_time_s": 0.0
+    },
+    {
+      "model": "朴素贝叶斯",
+      "params": "alpha=0.5",
+      "accuracy": 0.903,
+      "macro_f1": 0.904,
+      "train_time_s": 0.0
+    },
+    {
+      "model": "逻辑回归",
+      "params": "C=0.1",
+      "accuracy": 0.9009,
+      "macro_f1": 0.9015,
+      "train_time_s": 0.2
+    },
+    {
+      "model": "朴素贝叶斯",
+      "params": "alpha=1.0",
+      "accuracy": 0.8982,
+      "macro_f1": 0.8993,
+      "train_time_s": 0.0
+    },
+    {
+      "model": "SVM(线性核)",
+      "params": "C=0.1",
+      "accuracy": 0.844,
+      "macro_f1": 0.8514,
+      "train_time_s": 27.7
+    }
+  ],
+  "best_model": {
+    "model": "多层感知机",
+    "params": "hidden=(100,), alpha=0.001",
+    "accuracy": 0.9389,
+    "macro_f1": 0.9392,
+    "train_time_s": 179.0
+  },
+  "confusion_matrix": [
+    [
+      136,
+      2,
+      5,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      139,
+      4,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      6,
+      7,
+      124,
+      1,
+      0,
+      0,
+      0,
+      8,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      143,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      1,
+      145,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      148,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      2,
+      2,
+      1,
+      0,
+      0,
+      141,
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      2,
+      10,
+      3,
+      1,
+      0,
+      1,
+      128,
+      1,
+      0
+    ],
+    [
+      4,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      141,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      139
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n           0     0.8831    0.9315    0.9067       146\n           1     0.9085    0.9392    0.9236       148\n           2     0.8267    0.8435    0.8350       147\n           3     0.9408    0.9662    0.9533       148\n           4     0.9932    0.9667    0.9797       150\n           5     0.9737    0.9933    0.9834       149\n           6     0.9930    0.9463    0.9691       149\n           7     0.9014    0.8649    0.8828       148\n           8     0.9860    0.9527    0.9691       148\n           9     0.9929    0.9858    0.9893       141\n\n    accuracy                         0.9389      1474\n   macro avg     0.9399    0.9390    0.9392      1474\nweighted avg     0.9399    0.9389    0.9392      1474\n"
+}
