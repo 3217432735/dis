@@ -33,3 +33,10 @@ python build_report.py   # 生成实验报告 PDF
 ```
 
 所有随机过程固定 `random_state=42`，重复运行结果一致。
+
+## 实验二：搜索算法
+
+包含迷宫 A*、加权地形 A*、Alpha-Beta 剪枝和宝藏分配综合题。
+
+- [代码与实验说明](experiment2_search_algorithms/README.md)
+- [实验报告 PDF](experiment2_search_algorithms/output/pdf/实验二_搜索算法_实验报告.pdf)
